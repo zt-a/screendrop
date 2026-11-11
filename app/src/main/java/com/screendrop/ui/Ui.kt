@@ -29,6 +29,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import com.screendrop.util.QrGenerator
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -61,7 +62,8 @@ fun ScreenDropApp(
     vm: MainViewModel,
     onOpenWifiSettings: () -> Unit,
     onOpenFile: (String) -> Unit,
-    onOpenFolder: () -> Unit
+    onOpenFolder: () -> Unit,
+    onShareWifi: () -> Unit
 ) {
     val ui by vm.ui.collectAsState()
     val ctx = LocalContext.current
@@ -283,6 +285,9 @@ private fun FilesPanel(
                 if (ui.files.isNotEmpty()) {
                     TextButton(onClick = onOpenFolder) {
                         Text("В проводник", fontSize = 15.sp, color = Accent)
+                    }
+                    OutlinedButton(onClick = { vm.onShareWifi() }, modifier = Modifier.height(36.dp), colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFF4F8CFF))) {
+                        Text("Поделиться Wi-Fi", fontSize = 14.sp)
                     }
                 }
             }

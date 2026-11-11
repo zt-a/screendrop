@@ -25,7 +25,8 @@ class MainActivity : ComponentActivity() {
                 vm = vm,
                 onOpenWifiSettings = { openWifiSettings() },
                 onOpenFile = { id -> openFile(id) },
-                onOpenFolder = { openInFileManager() }
+                onOpenFolder = { openInFileManager() },
+                onShareWifi = { /* sharing Wi-Fi QR - TODO: connect to ViewModel */ }
             )
         }
     }
@@ -88,4 +89,5 @@ class MainActivity : ComponentActivity() {
     private fun toast(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
+
 }

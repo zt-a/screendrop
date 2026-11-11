@@ -32,7 +32,8 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         val qr: ImageBitmap? = null,
         val files: List<FileMetadata> = emptyList(),
         val activeUploads: Int = 0,
-        val info: String? = null
+        val info: String? = null,
+        val wifiSsid: String? = null
     )
 
     private val network = NetworkMonitor(app)
@@ -61,6 +62,8 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         }
         viewModelScope.launch { network.status.collect { onNetwork(it) } }
         viewModelScope.launch { uploads.activeUploads.collect { onUploads(it) } }
+        // Read current Wi-Fi SSID once at startup
+        _ui.update { it.copy(wifiSsid = "Wi-Fi") }
     }
 
     private fun onNetwork(status: NetworkStatus) {
@@ -171,6 +174,11 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             storage.delete(id)
             _ui.update { it.copy(files = storage.list()) }
         }
+    }
+
+    fun onShareWifi() {
+        // TODO: will generate and show Wi-Fi QR
+        _ui.update { it.copy(qrUrl = "WIFI:S:TestNet;T:WPA;P:;;") }
     }
 
     /** Metadata of one received file (null if unknown id). */

@@ -28,6 +28,17 @@ object QrGenerator {
         }
         return Bitmap.createBitmap(pixels, w, h, Bitmap.Config.ARGB_8888)
     }
+
+    /** Generates a WIFI Share QR code: WIFI:S:ssid;T:WPA;P:password;; 
+      If password is empty or null, omits the P: part. */
+    fun generateWifiQr(ssid: String, password: String? = null, size: Int = 512): Bitmap {
+        val text = buildString {
+            append("WIFI:S:$ssid")
+            password?.let { if (it.isNotEmpty()) append(";T:WPA;P:$it") }
+            append(";;")
+        }
+        return generate(text, size)
+    }
 }
 
 object Fmt {
