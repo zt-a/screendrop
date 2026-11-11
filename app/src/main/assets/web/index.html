@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScreenDrop — отправка файлов</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <div class="logo">Screen<span>Drop</span></div>
+  <div class="sub" id="statusLine">Подключение…</div>
+</header>
+<main>
+  <div id="closedCard" class="card hidden">
+    <h2>Приём файлов завершён</h2>
+    <p>Сессия закрыта или истекла. Попросите преподавателя показать новый QR-код.</p>
+  </div>
+  <div id="mainCard" class="card">
+    <label for="sender">Ваше имя (необязательно)</label>
+    <input type="text" id="sender" maxlength="64" placeholder="Например: Иван" autocomplete="name">
+    <label for="fileInput" class="pick">＋ Выбрать файлы</label>
+    <input type="file" id="fileInput" multiple
+      accept=".pdf,.ppt,.pptx,.doc,.docx,.txt,.jpg,.jpeg,.png,.mp4">
+    <ul id="fileList"></ul>
+    <button id="uploadBtn" class="primary" disabled>Отправить на экран</button>
+    <div id="progressArea"></div>
+  </div>
+</main>
+<footer>Файлы передаются напрямую по локальной сети Wi-Fi</footer>
+<script src="/app.js"></script>
+</body>
+</html>
