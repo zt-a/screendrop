@@ -319,8 +319,8 @@ for label, cw in chips:
     cx += cw + 0.14
 
 rect(s, MARGIN, 5.72, 7.4, 0.012, fill=BORDER, radius=None, shape=MSO_SHAPE.RECTANGLE)
-text(s, MARGIN, 5.92, 5.2, 0.3, "Выполнил: ______________________", size=12.5, color=MUTED)
-text(s, MARGIN, 6.28, 5.2, 0.3, "Группа: __________   ·   2026", size=12.5, color=MUTED)
+text(s, MARGIN, 5.92, 5.2, 0.3, "Выполнил: Жыргалбек Тагайбеков", size=12.5, color=MUTED)
+text(s, MARGIN, 6.28, 5.2, 0.3, "Группа: ПИН-1-24   ·   2026", size=12.5, color=MUTED)
 
 card(s, 9.45, 1.62, 3.3, 4.62, fill=RGBColor(0x11, 0x1A, 0x2C))
 rect(s, 9.62, 1.82, 2.96, 2.96, fill=WHITE, radius=0.07)
