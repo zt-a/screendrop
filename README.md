@@ -38,7 +38,9 @@
 - [Установка](docs/INSTALLATION.md)
 - [Руководство пользователя](docs/USER_GUIDE.md)
 - [Демонстрация](docs/DEMO_GUIDE.md)
-- [Презентация](docs/PRESENTATION.md)
+- [Презентация (тезисы)](docs/PRESENTATION.md)
+- [Презентация к защите: PPTX + PDF](docs/presentation/README.md)
+- [Текст выступления на 5 минут](docs/presentation/SPEECH.md)
 - [Вопросы к защите](docs/DEFENSE_QUESTIONS.md)
 - [Ограничения](docs/KNOWN_LIMITATIONS.md)
 
